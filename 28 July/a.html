@@ -1,0 +1,57 @@
+<script>
+//IIFE
+//Immediately Invoked Function Expressions
+(function(){
+	console.log('App started');
+})();
+
+
+var test=function(a){
+	return a(0)+a(1)+a(-1);
+}
+plus1=function(a){
+	return a+1;
+}
+
+square=function(a){
+	return a*a;
+}
+console.log(test(plus1));
+console.log(test(square));
+console.log(test(Math.sin));
+console.log(test(Math.cos));
+//console.log(test(alert));
+
+console.log(test(function(a){
+	return a+2;
+}));
+
+sayHello=function(){
+	console.log('hello');
+}
+//setTimeout(fn,Number)
+setTimeout(sayHello,5000);
+
+/*
+setInterval(function(){
+	console.log('Function called by interval');
+},2000);
+*/
+
+var counter=function(){
+	x=0;
+	return function(){
+		x++;
+		return x;
+	}
+}
+
+var counter2=function(){
+	var x=0;
+	return function(){
+		x++;
+		return x;
+	}
+}
+
+</script>

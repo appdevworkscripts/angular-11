@@ -1,0 +1,26 @@
+<script>
+	var sayHello=function(){
+		console.log('hello');
+	}
+	var arr=[1,'hello',true,function(a,b){return a+b;},[3,4],sayHello];
+	console.log(arr[1]);
+	console.log(arr[3](8,4));
+	arr[5]();
+	console.log(arr[4][0]);
+	console.log(arr["2"])
+	console.log(arr["length"])
+	console.log(arr.length)
+	
+	console.log(arr[100])
+	
+	arr[1]="Bye";
+	
+	console.log(arr[1]);
+	console.log(arr);
+	//arr[600]=100;
+	arr.unshift(45);
+	
+	console.log(arr);
+	arr.pop();
+	console.log(arr);
+</script>
