@@ -1,0 +1,52 @@
+<script>
+	var arr=[4,5,7,2,8,1];
+	var sayHello=function(){
+		console.log('Hello');
+	}
+	//console.log(arr)
+	var f=arr.forEach(function(element,index){
+		console.log(element+'-'+index);
+	});
+	console.log(f);
+	
+	var filter=arr.filter(function(element,index){
+		console.log(element+'-'+index);
+		return element%2==0;
+	});
+	console.log(filter);
+	
+	var m=arr.map(function(element,index){
+		return element*2;
+	});
+	console.log(m);
+	
+	var a=[1,2,3]
+	
+	var r=a.reduce(function(counter,element){
+		console.log(counter);
+		return counter+element;
+	},0);
+	console.log(r);
+	
+	var s=arr.some(function(element){
+		return element%5==0;
+	});
+	console.log(s);
+	var e=arr.every(function(element){
+		return element>0;
+	});
+	console.log(e);
+	
+	console.log(arr);
+	var reversed=arr.reduce(function(counter,element){
+		counter.unshift(element);
+		return counter;
+	},[]);
+	
+	console.log(reversed);
+	console.log(arr);
+	
+	
+	
+	
+</script>

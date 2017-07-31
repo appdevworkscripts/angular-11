@@ -1,0 +1,47 @@
+<script>
+	var obj={
+		a:1,
+		"x-t":'hello',
+		y:function(){
+			console.log('hello');
+		},
+		t:{
+			x:100,
+			y:200
+		}
+	}
+	obj['a']
+	obj['x-t']
+	obj.t['x']
+	obj.y()
+	obj['y']()
+	obj.a=9000;
+	obj.k='pppppp'
+	//delete obj['x-t'];
+	console.log("x-t" in obj);
+	
+	for(let i in obj){
+		console.log(obj[i]);
+	}
+	
+	
+	
+	var studentsArray=[
+				{name:'Abc', roll:1},
+				{name:'pqr', roll:2},
+				{name:'mno', roll:3},
+				{name:'efg', roll:4},
+				{name:'Xyz', roll:5},
+			];
+			
+			
+	studentsArray.forEach(function(element){
+		console.log('Name is '+element.name+' Roll is '+element.roll);
+	});
+	
+	var mappedStudents=studentsArray.map(function(element){
+		element.balance=(Math.random()*400)+100;
+		return element;
+	});
+	console.log(mappedStudents)
+</script>
