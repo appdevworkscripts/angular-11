@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	<body>
+		<form onsubmit="return submitForm();">
+			<input  type="number" id="n1" required/>
+			<input type="number" id="n2" required />
+			<br />
+			<button  >+</button>
+			<button  >-</button>
+			<h1 id="result"></h1>
+		</form>
+		<script>
+			const n1=document.getElementById("n1");
+			const n2=document.getElementById("n2");
+			function submitForm(){
+				result.innerHTML=parseFloat(n1.value)+parseFloat(n2.value);
+				return false;
+			}
+		</script>
+	</body>
+</html>
