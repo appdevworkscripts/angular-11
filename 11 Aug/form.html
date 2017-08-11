@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	<body>
+	<label for="phone">Enter Phone Number</label>
+		<form onsubmit="return false;">
+			<input name="name" type="text" placeholder="Enter name" maxlength="10">
+			<input name="password" type="password" placeholder="Enter password" minlength="5">
+			<input name="email" type="email">
+			
+			<input id="phone" type="text" pattern="^[789]\d{9}$">
+			<input name="age" type="number" min="10" max="50">
+			<br >
+			<label for="genderM">Male</label>
+			 <input id="genderM" name="gender" type="radio" value="M" requi>
+			<label for="genderF">Female</label> <input id="genderF" name="gender" type="radio" value="F">
+			<br >
+			Valid <input type="checkbox">
+			<br >
+			<input type="range" value="0"><br />
+			<input type="color" value="#ff0000"><br />
+			<input type="file" ><br />
+			<textarea></textarea>
+			<br />
+			<select name="selected" multiple>
+				<option value="1">A</option>
+				<option>B</option>
+				<option>C</option>
+				<option>D</option>				
+			</select>
+			
+			
+			<select name="selectedData" required>
+				<option value="">Select any option</option>
+				<option>B</option>
+				<option>C</option>
+				<option>D</option>				
+			</select>
+			<br />
+			<button>Submit</button>
+			<button type="button">Button</button>
+			<button type="reset">Reset</button><br />
+			<input type="submit" value="Submit" >
+		</form>
+	</body>
+</html>

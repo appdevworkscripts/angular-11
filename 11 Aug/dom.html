@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	<body>
+		<form>
+			<input  type="number" id="n1" />
+			<input type="number" id="n2" />
+			<br />
+			<button onclick="addNumbers()" type="button">+</button>
+			<button id="subButton" type="button">-</button>
+			<h1 id="result"></h1>
+		</form>
+		<script>
+			const n1=document.getElementById("n1");
+			const n2=document.getElementById("n2");
+			const result=document.getElementById("result");
+			const subBtn=document.getElementById("subButton");
+			function addNumbers(){
+				result.innerHTML=parseFloat(n1.value)+parseFloat(n2.value);
+			}
+			
+			
+			subBtn.onclick=function(){
+				result.innerHTML=parseFloat(n1.value)-parseFloat(n2.value);
+			}
+		</script>
+	</body>
+</html>
