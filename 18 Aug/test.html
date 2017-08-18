@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        .abc {
+            color: yellow;
+        }
+        .abc2 {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>This is a para content</p>
+
+    
+    <script>
+        const p = document.querySelector("p");
+        //p.style.color="red";
+        //p.style.fontSize="30px";
+        
+        
+        //p.setAttribute("class","abc abc2");
+
+        p.classList.add("abc");
+        p.classList.add("abc2");
+        p.classList.remove("abc");
+    </script>
+
+</body>
+
+</html>
