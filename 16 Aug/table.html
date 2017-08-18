@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			#t1,#t1 tr,#t1 th,#t1 td{
+				border:1px solid black;				
+			}
+			#t1{
+				border-collapse:collapse;
+			}
+			#t1 thead{
+				color:white;
+				background:black;
+			}
+			
+			#t1>tbody>tr:nth-child(even){
+				color:yellow;
+				background:green;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<table id="t1">
+		<thead>
+				<tr>
+					<th>Name</th>
+					<th>Roll No.</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Nadeem</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>Xyz</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Xyz</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Xyz</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Xyz</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Xyz</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Xyz</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Xyz</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>Xyz</td>
+					<td>2</td>
+				</tr>
+			</tbody>			
+			
+		</table>
+		<br /><br /><br /><br />
+		<table >
+			<tbody>
+				<tr>
+					<td colspan="2">Abc</td>
+				</tr>
+				<tr>
+					<td>P</td>
+					<td>Q</td>
+				</tr>
+			</tbody>			
+			
+		</table>
+		<br /><br /><br /><br />
+		<table >
+			<tbody>
+				<tr>
+					<td>M</td>
+					<td rowspan="2">Q</td>
+				</tr>
+				<tr>
+					<td>P</td>
+				</tr>
+			</tbody>			
+		</table>
+	</body>
+</html>

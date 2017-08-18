@@ -1,0 +1,118 @@
+<!doctype html>
+<html style="background:black;">
+	<head>
+		<style>
+		
+		 /* tag#id.class[attr=val] */
+		 #p1{
+			color:green;
+		 }
+		 
+		 
+		 p{
+			text-align:center;
+			color:white;
+		 }
+		 
+		 
+		 p.cp2{
+			font-size:25px;
+			color:red;
+		 }
+		 p.cp{
+			text-align:right;
+			color:yellow;
+		 }
+		 p.cp.cp2{
+			font-weight:bold;
+		 }
+		 input.myinput[type=number]{
+			color:green;
+		 }
+		 input[type=text]{
+			color:red;
+		 }
+		 p>span{
+			font-weight:bold;
+		 }
+		.xyz>span{
+			color:white;
+		}
+		p span{
+			color:white;
+			font-size:25px;
+		}
+		div, a{
+			background:yellow;
+		}
+		
+		
+		#alt{
+			color:white;
+		}
+		
+		#alt p:nth-child(1){
+			font-size:30px
+		}
+		#alt p:nth-child(5){
+			font-weight:bold;
+		}
+		a[href]{
+			text-decoration:none;
+		}
+		</style>
+	</head>
+	<body>
+		
+		
+		<p style="color:#e4a691; background:rgba(0,0,255,0.2);">
+			My content
+			<span> my span</span>
+		</p>
+		<p>
+			My second content
+			<a href="http://google.com">
+			<span>My inner span</span>
+			</a>
+		</p>
+		
+		<p id="p1">
+			Extended Para
+		</p>
+		<p class="cp">
+			Extended Para
+		</p>
+		<p class="cp2 cp">
+			Extended Para
+		</p>
+		<p class="cp2">
+			Extended Para
+		</p>
+		<p class="cp2">
+			Extended Para
+			<span>This is a span</span>
+		</p>
+		<input class="myinput" type="number" />
+		<input class="myinput" type="text" />
+		<div class="xyz">
+			<span>This is a span</span>
+		</div>
+		<div id="alt">
+			<p>
+				Para 1
+			</p>
+			<p>
+				Para 2
+			</p>
+			<p>
+				Para 3
+			</p>
+			<p>
+				Para 4
+			</p>
+			<p>
+				Para 5
+			</p>
+		</div>
+	</body>
+</html>
