@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+
+</head>
+
+<body>
+    Hii <i class="material-icons">bug_report</i>
+    <br />
+    <span class="mdl-chip mdl-chip--deletable">
+            <span class="mdl-chip__text">Deletable Chip</span>
+    <button type="button" class="mdl-chip__action" id="mybtn"><i class="material-icons">cancel</i></button>
+    </span>
+
+
+    <dialog id="myDialog" class="mdl-dialog">
+        <h4 class="mdl-dialog__title">Allow data collection?</h4>
+        <div class="mdl-dialog__content">
+            <p>
+                Allowing us to collect data will let us get you the information you want faster.
+            </p>
+        </div>
+        <div class="mdl-dialog__actions">
+            <button id="c1" type="button" class="mdl-button">Agree</button>
+            <button id="c2" type="button" class="mdl-button close">Disagree</button>
+        </div>
+    </dialog>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script>
+        const dialog=document.querySelector("#myDialog");
+        const mybtn=document.querySelector("#mybtn");
+        //dialogPolyfill.registerDialog(dialog);
+        mybtn.onclick=function(){
+            dialog.showModal();
+        }
+        const c1=document.querySelector("#c1");
+        const c2=document.querySelector("#c2");
+        function closeModal(){
+            dialog.close()
+        }
+        c1.onclick=closeModal;
+        c2.onclick=closeModal;
+    </script>
+</body>
+
+</html>
