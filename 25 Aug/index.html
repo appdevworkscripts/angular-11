@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="myapp">
+
+<head>
+</head>
+
+<body >
+    {{x}}
+    <input ng-model="x" type="number">
+    <h1>{{x}}</h1>
+    <h1 ng-bind="x"></h1>
+    <div ng-if="x>100" >
+        IF BLOCK
+    </div>
+    <div ng-show="x>100">
+        SHOW BLOCK
+    </div>
+    <div ng-hide="x>100" >
+        HIDE BLOCK
+    </div>
+    <script src="angular.min.js"></script>
+    <script>
+        const app=angular.module('myapp',[]);
+       
+    </script>
+</body>
+
+</html>

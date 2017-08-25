@@ -1,0 +1,68 @@
+<!doctype html>
+<html ng-app="myapp">
+
+<head>
+</head>
+
+<body>
+    <div ng-controller="AController">
+        <div ng-hide="students.length">
+            No students Present
+        </div>
+        <table ng-if="students.length">
+            <thead>
+                <tr>
+                    <th>Sr.No.</th>
+                    <th>Name</th>
+                    <th>Roll</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="student in students">
+                    <td>{{$index+1}}</td>
+                    <td ng-bind="student.name"></td>
+                    <td>{{student.roll}}</td>
+                    <td>
+                        <button ng-click="editObject(student)">Edit</button>
+                    </td>
+                    <td>
+                        <button ng-click="deleteObject($index)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <form ng-submit="submitForm()">
+                Name <input type="text" ng-model="student.name" required><br />
+                Roll <input type="number" ng-model="student.roll" required><br />
+                <button>Submit</button>
+        </form>
+    </div>
+
+    <script src="angular.min.js"></script>
+    <script>
+        const app = angular.module('myapp', []);
+        app.controller('AController', function ($scope, $rootScope) {
+            $scope.state=1;
+            $scope.students = [
+                { name: 'Abc', roll: 123 },
+                { name: 'qwe', roll: 456 },
+            ];
+            $scope.submitForm=function(){
+                $scope.state==1 && $scope.students.push($scope.student);
+                $scope.student={};
+                $scope.state=1;
+            }
+            $scope.deleteObject=function(index){
+                confirm('Are you sure') && $scope.students.splice(index,1);
+            }
+            $scope.editObject=function(student){
+                $scope.student=student;
+                $scope.state=2;
+            }
+        });
+    </script>
+</body>
+
+</html>

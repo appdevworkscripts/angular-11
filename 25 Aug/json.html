@@ -1,0 +1,25 @@
+<script>
+    //JavaScript Object Notation --> String
+    var obj={
+        a:'1',
+        'abc xyz':2,
+        x:['A','B',120],
+        d:{
+            x:100,
+            y:200
+        },
+        e:null,
+        f:false,
+        g:undefined,
+        h:function(){
+            m=100;
+            console.log('hello');
+        },
+        i:new Date(2010,11,10)
+    }
+
+    str=JSON.stringify(obj);
+    console.log(str)
+    var newObj=JSON.parse(str)
+    console.log(newObj)
+</script>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html ng-app="myapp">
+
+<head>
+</head>
+
+<body >
+    <div ng-controller="AController">
+        <form ng-submit="submitForm()">
+            <input ng-model="num" type="number" required>
+            <button>Submit</button>
+            <h1>{{result}}</h1>
+        </form>
+    </div>
+    <script src="angular.min.js"></script>
+    <script>
+        const app=angular.module('myapp',[]);
+        app.controller('AController',function($scope,$q){
+            //Synchronous
+            var square=function(x){
+                return x*x;
+            }
+            //Asynchronous
+            var asyncSquare=function(x){
+                setTimeout(function(){
+                    console.log('calculated');
+                    return x*x;
+                },3000);
+            }
+            var promisedSquare=function(x){
+                return $q(function(resolve,reject){
+                    setTimeout(function(){
+                        if(x<0) reject('-ve numbers not allowed')
+                        console.log('calculated');
+                        resolve(x*x);
+                        
+                    },3000);
+                });
+            }
+            $scope.submitForm=function(){
+                //$scope.result=asyncSquare($scope.num)
+                promisedSquare($scope.num).then(function(response){
+                    console.log(response);
+                    $scope.result=response;
+                },function(response){
+                    console.log(response);
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>
