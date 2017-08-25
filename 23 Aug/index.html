@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app="myapp">
+
+<head>
+</head>
+
+<body>
+    Hi {{6+7}}
+    <div>
+        {{x+5}}
+    </div>
+    <div>
+        {{6+7}}
+        <input ng-model="y">
+        <p ng-click="myf()">
+            xnnc sdj {{y}}
+        </p>
+        <h1>{{y}}</h1>
+        <form>
+        <input ng-model="y"> <br /><br /><br />
+        <input ng-model="num1" type="number"> <input ng-model="num2" type="number"
+        >
+        {{num1+num2}}
+        <button>Submit</button>
+        </form>
+        {{obj.x}} <br />
+        {{obj.y}} <br/>
+    
+        <div ng-repeat="x in arr">
+            {{x}} - {{$index}}
+        </div>
+        <input ng-model="arr[3]" type="number">
+    </div>
+    <script src="angular.min.js"></script>
+    <script>
+        const app=angular.module('myapp',[]);
+        app.run(function($rootScope){
+            console.log('My App 1 is loaded');
+            $rootScope.x=100;
+            $rootScope.myf=function(){
+                console.log($rootScope.y);
+            }
+            $rootScope.obj={
+                x:10,
+                y:15
+            }
+            $rootScope.arr=[5,9,1,1,7,3];
+        });
+    </script>
+</body>
+
+</html>
