@@ -19,12 +19,10 @@ app.controller('AController',function($scope,$http){
         $http({
             url:'https://zenways-contact.herokuapp.com/api/contact',
             headers:{
-                key:'ZENWAYS01SAGAR',
-                'content-type':'application/json'
+                key:'ZENWAYS01SAGAR'
             },
-            data:JSON.stringify($scope.contact),
+            data:$scope.contact,
             method:'POST'
-
         }).then(function(response){
             refresh();
             $scope.contact={}
