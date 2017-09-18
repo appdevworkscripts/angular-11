@@ -1,0 +1,75 @@
+<!doctype html>
+<html ng-app="myapp">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <style>
+        input.ng-invalid.ng-touched {
+            border: 1px solid red;
+            animation: blink-animation 1s steps(5, start) infinite;
+            -webkit-animation: blink-animation 1s steps(5, start) infinite;
+        }
+
+        input.ng-valid {
+            border: 1px solid green;
+        }
+
+        @keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+
+        @-webkit-keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3" ng-controller="MyFormController">
+                <form name="myUserForm" ng-submit="myUserForm.$valid && submitForm()" novalidate>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" class="form-control" ng-model="user.name" minlength="3" required>
+                        <span class="help-block text-danger" ng-show="(myUserForm.$submitted || myUserForm.name.$touched) && myUserForm.name.$error.required">name is compulsory</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input id="phone" name="phone" class="form-control" ng-model="user.phone" minlength="10" maxlength="10" pattern="^[789]\d{9}$"
+                            required>
+                        <span ng-show="myUserForm.$submitted ||myUserForm.phone.$touched">
+                                    <span class="text-danger" ng-show="myUserForm.phone.$error.required">Phone number is required</span>
+                        <span class="text-danger" ng-show="myUserForm.phone.$error.minlength">Phone number should have atleast 10 digits</span>
+                        <span class="text-danger" ng-show="myUserForm.phone.$error.pattern">Invalid Format</span>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input id="age" name="age" class="form-control" ng-model="user.age" type="number" min="18" max="58" required>
+                        <span ng-show="myUserForm.$submitted ||myUserForm.age.$touched">
+                                <span class="text-danger" ng-show="myUserForm.age.$error.required">Age is required</span>
+                        <span class="text-danger" ng-show="myUserForm.age.$error.min">Minimum Age should be 18</span>
+                        <span class="text-danger" ng-show="myUserForm.age.$error.max">Maximum age should be 58</span>
+                        </span>
+                    </div>
+                    <button class="btn btn-primary">Submit</button>
+                </form>
+                <!--
+                <pre>
+                    {{myUserForm.name |json}}
+                </pre>
+            -->
+            </div>
+        </div>
+    </div>
+    <script src="libs/angular.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
